@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap');
+
+/* Genel Ayarlar */
+body {
+  font-family: 'Baloo 2', cursive;
+  background-image: url('./background-1.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.logo-img {
+  width: 400px;
+  margin-bottom: 180px;
+}
+
+/* Arama Alanı */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  flex: 1 1 250px; 
+  max-width: 350px; 
+}
+
+.search-btn {
+  background-color: #ffcb05;
+  color: blue;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #f2b807;
+  transform: scale(1.05);
+}
+
+/* Buton Alanı */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.action-btn {
+  background-color: #ffcb05;
+  color: blue;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #f2b807;
+  transform: scale(1.05);
+}
+
+/* Pokémon Sonuç Alanı */
+#pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+/* Pokémon Kartı */
+.pokemon-card {
+  background-color: #ffffff;
+  border: 2px solid #2a75bb;
+  border-radius: 10px;
+  padding: 4px; 
+  margin: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  max-width: 90%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 0.9rem; 
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-card img {
+  width: 150px; 
+  height: 150px;
+  margin: 10px 0;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #ffcb05;
+}
+
+.pokemon-card h3 {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #2a75bb;
+}
+
+.pokemon-card p {
+  font-size: 0.9rem; 
+  color: #555;
+  margin: 5px 0;
+}
+
+.pokemon-card strong {
+  color: #2a75bb;
+}
+
+/* Yakalanan Pokémon Alanı */
+#caught-pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #2a75bb;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.caught-pokemon-img {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  border: 2px solid #ffcb05;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.caught-pokemon-img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  
+  .logo-img {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  #pokemon-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pokemon-card {
+    width: 70%; 
+    font-size: 0.8rem;
+  }
+
+  .pokemon-card img {
+    width: 100px; 
+    height: 100px;
+  }
+
+  .pokemon-card h3 {
+    font-size: 1rem;
+  }
+}

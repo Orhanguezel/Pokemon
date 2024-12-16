@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Search</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Logo -->
+  <img src="logo.png" alt="Pokémon" class="logo-img"/>
+
+  <!-- Arama Alanı -->
+  <div class="search-container">
+    <input type="text" id="pokemon-search" class="search-input" placeholder="Enter Pokémon Name" />
+    <button id="search-btn" class="search-btn">Search</button>
+  </div>
+
+  <!-- Diğer Butonlar -->
+  <div class="button-container">
+    <button id="random-btn" class="action-btn">Random Pokémon</button>
+    <button id="clear-btn" class="action-btn">Clear</button>
+    <button id="all-btn" class="action-btn">All Pokémon</button>
+    <button id="play-btn" class="action-btn">Play</button>
+  </div>
+
+  <!-- Yakalanan Pokémonlar -->
+  <div id="caught-pokemon-container"></div>
+
+  <!-- Pokémon Sonuç Alanı -->
+  <div id="pokemon-container"></div>
+
+  <ul id="caught-list"></ul>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
