@@ -1,30 +1,66 @@
-# Pokemon-Karten
+## **Deutsch 🇩🇪**
 
-Erstelle eine Suchmaschine für Pokemon mit der Fetch API und der Pokemon API.
+### 🎮 Beschreibung
+Eine unterhaltsame Pokémon-Webanwendung, mit der Sie Pokémon suchen, anzeigen und fangen können, indem Sie die [PokeAPI](https://pokeapi.co/) verwenden. Die Anwendung enthält Animationen, Pokémon-Details (Fähigkeiten, Statistiken, Typen) und Soundeffekte, wenn Sie ein Pokémon fangen. Wenn alle Pokémon gefangen werden, feiern Sie mit Konfetti!
 
-## Aufgabe
+---
 
-Benutze die [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) und die [Pokemon API](https://pokeapi.co/);
+### **Demo**
+Probieren Sie die Live-Demo hier aus:  
+[Live-Demo](https://your-demo-url.com)
 
-- Baue eine Website, die es dem Benutzer ermöglicht, nach Pokemon zu suchen. Der Benutzer sollte in der Lage sein, mit einem `<input />`-Feld und einem `<button>` mit der Seite zu interagieren.
+---
 
-## Anforderungen
+### **Funktionen**
+- **Pokémon Suchen**: Zeigen Sie detaillierte Informationen zu Pokémon (Fähigkeiten, Statistiken, Typen) an.  
+- **Zufälliges Pokémon**: Ein zufälliges Pokémon anzeigen.  
+- **Pokémon Fangen**: Klicken Sie, um Pokémon zu fangen und hören Sie deren Geräusche.  
+- **Spielmodus**: Pokémon bewegen sich zufällig auf dem Bildschirm.  
+- **Konfetti-Feier**: Feiern Sie, wenn alle Pokémon gefangen wurden!
 
-- Es sollte ein `<input />`-Feld für die Suchkriterien vorhanden sein.
-- Es sollte einen Button geben, der bei `click` den `value` des `<input />`-Feldes verwendet, um;
+---
 
-  - Überprüfen, dass der `value` nicht leer ist
-  - Wenn `value` leer ist, eine Warnung an den Benutzer anzeigen
-  - Die [Pokemon API](https://pokeapi.co/) durchsuchen
-  - Das Ergebnis der API auf der Seite anzeigen
-  - Das Ergebnis sollte die folgenden Eigenschaften enthalten;
-    - name
-    - front_default (Bild)
-    - stats
-    - abilities
+### **Vorschau**
 
-- Die Ergebnisse sollten so gestylt sein, dass sie wie eine Karte aussehen (siehe **Erwartetes Ergebnis** unten)
+![Pokémon-App](https://your-image-link.com/demo.png)
 
-## Erwartetes Ergebnis
+---
 
-![Erwartetes Ergebnis](./reference.gif)
+### **Wie läuft es lokal?**
+1. Repository klonen:
+   ```bash
+   git clone https://github.com/your-username/pokemon-catch-game.git
+   cd pokemon-catch-game
+   ```
+2. Öffnen Sie `index.html` in Ihrem Browser.
+
+---
+
+## **Projektstruktur**
+
+```
+pokemon-catch-game/
+│
+├── index.html           # Haupt-HTML-Datei
+├── style.css            # CSS für Design
+├── app.js               # Haupt-JavaScript-Logik
+├── assets/
+│   ├── logo.png         # Pokémon-Logo
+│   ├── background-1.png # Hintergrundbild
+│   └── demo.png         # Demo-Screenshot
+└── README.md            # Projektbeschreibung
+```
+
+---
+
+## **Credits**
+
+- Pokémon-Daten und Ressourcen von [PokeAPI](https://pokeapi.co/).
+- Konfetti-Effekt: [Canvas-Confetti](https://cdn.jsdelivr.net/npm/canvas-confetti).
+
+---
+
+## **Lizenz / License**
+
+Dieses Projekt steht unter der MIT-Lizenz zur Verfügung.
+```

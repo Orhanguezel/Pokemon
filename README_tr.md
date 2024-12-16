@@ -1,64 +1,35 @@
-### **Pokemon Kartları**
+## **Türkçe 🇹🇷**
 
-Fetch API ve Pokemon API kullanarak bir **Pokemon arama motoru** oluşturun.
-
----
-
-### **Görev**
-
-[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) ve [Pokemon API](https://pokeapi.co/) kullanarak:
-
-- Kullanıcının Pokemon araması yapabileceği bir web sitesi oluşturun. Kullanıcı, bir `<input />` alanı ve bir `<button>` ile sayfa üzerinde etkileşim kurabilmelidir.
+### 🎮 Açıklama
+[PokéAPI](https://pokeapi.co/) kullanarak Pokémon arayabileceğiniz, detaylarını görüntüleyebileceğiniz ve yakalayabileceğiniz eğlenceli bir Pokémon web uygulaması. Animasyonlar, Pokémon detayları (yetenekler, istatistikler, tür) ve yakalanan Pokémon'ların ses efektleri içerir. Tüm Pokémon'ları yakaladığınızda konfetilerle kutlama yapın!
 
 ---
 
-### **Gereksinimler**
-
-1. **Arama Alanı:**
-   - Kullanıcının arama yapabilmesi için bir `<input />` alanı ekleyin.
-
-2. **Buton:**
-   - `<button>` butonu ekleyin. Butona tıklanınca aşağıdaki işlemleri yapmalı:
-     - **`value` kontrolü:**  
-       `<input />` alanının `value` değeri boşsa:
-       - Kullanıcıya uyarı mesajı gösterin.
-     - **API'ye İstek:**  
-       - Eğer `value` boş değilse, Pokemon API'ye istek gönderin.
-     - **Sonuçların Gösterilmesi:**  
-       - API'den gelen verileri sayfada gösterin.
-
-3. **Sonuç Gösterimi:**
-   - Aşağıdaki özellikleri sayfada gösterin:
-     - **name:** Pokemon adı
-     - **front_default:** Pokemon resmi (image)
-     - **stats:** Pokemon istatistikleri
-     - **abilities:** Pokemon yetenekleri
-
-4. **Kart Tasarımı:**
-   - Sonuçları bir kart tasarımında gösterecek şekilde stil verin (CSS ile).
+### **Demo**
+Canlı demoyu buradan deneyebilirsiniz:  
+[Canlı Demo](https://your-demo-url.com)
 
 ---
 
-### **Beklenen Sonuç**
-
-- Kullanıcı bir Pokemon aradığında, sonuç kart şeklinde aşağıdaki gibi görüntülenmelidir:
-
-![Beklenen Sonuç](./reference.gif) 
-
----
-
-### **İpuçları:**
-
-- **API URL:**  
-  Arama yaparken Pokemon API'nin şu uç noktasını kullanabilirsiniz:  
-  ```
-  https://pokeapi.co/api/v2/pokemon/{pokemon adı veya ID}
-  ```
-
-- **Örneğin:**
-   - Pikachu için arama yapıyorsanız:  
-     `https://pokeapi.co/api/v2/pokemon/pikachu`
+### **Özellikler**
+- **Pokémon Ara**: Pokémon arayın ve detaylı bilgilerini (yetenekler, istatistikler, tür) görüntüleyin.  
+- **Rastgele Pokémon**: Rastgele bir Pokémon görüntüleyin.  
+- **Pokémon Yakalama**: Pokémon'a tıklayarak yakalayın ve sesini duyun.  
+- **Oyun Modu**: Pokémon'lar ekranda rastgele hareket eder.  
+- **Konfeti Kutlaması**: Tüm Pokémon'ları yakaladığınızda konfeti efekti gösterilir.
 
 ---
 
-Bu adımları tamamladıktan sonra, sayfa Pokemon arama işlevine sahip olacaktır.
+### **Önizleme**
+
+![Pokémon Uygulaması](https://your-image-link.com/demo.png)
+
+---
+
+### **Nasıl Çalıştırılır?**
+1. Depoyu klonlayın:
+   ```bash
+   git clone https://github.com/your-username/pokemon-catch-game.git
+   cd pokemon-catch-game
+   ```
+2. `index.html` dosyasını tarayıcınızda açın.
