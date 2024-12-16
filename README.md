@@ -7,7 +7,7 @@ A fun Pokémon web application where you can search, display, and catch Pokémon
 ## **Demo**
 You can try the live demo here:
 
-[Live Demo](https://your-demo-url.com)
+[Live Demo](https://orhanguezel.github.io/Pokemon/)
 
 ---
 
@@ -27,7 +27,10 @@ You can try the live demo here:
 
 ### 🎮 Gameplay Interface
 
-![Pokémon App](https://your-image-link.com/demo.png)
+![Pokémon App](./demo.png)
+![Pokémon App](./demo2.png)
+![Pokémon App](./demo3.png)
+![Pokémon App](./demo4.png)
 
 ---
 
@@ -35,7 +38,7 @@ You can try the live demo here:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/pokemon-catch-game.git
+   git clone https://github.com/Orhanguezel/Pokemon.git
    cd pokemon-catch-game
    ```
 
@@ -104,5 +107,5 @@ This project is open-source and available under the MIT License.
 ---
 
 ### Notes:
-1. Replace **`https://your-demo-url.com`** with the actual demo URL.
-2. Replace **`https://your-image-link.com/demo.png`** with the correct image link for your project preview (e.g., upload the image to your repository or an image hosting service like Imgur).
+1. Replace **`https://orhanguezel.github.io/Pokemon/`** with the actual demo URL.
+2. Replace **`./demo.png`** with the correct image link for your project preview (e.g., upload the image to your repository or an image hosting service like Imgur).
