@@ -14,15 +14,15 @@ const confettiScript = document.createElement("script");
 confettiScript.src = "https://cdn.jsdelivr.net/npm/canvas-confetti";
 document.body.appendChild(confettiScript);
 
-let totalPokemons = 10; // Play veya All butonu ile oluşturulacak Pokémon sayısı
-let caughtPokemons = 0; // Yakalanan Pokémon sayısını takip eder
+let totalPokemons = 10; 
+let caughtPokemons = 0;
 
 // Clear button: Temizleme
 clearButton.addEventListener("click", () => {
   container.innerHTML = "";
   caughtList.innerHTML = "";
   caughtPokemonContainer.innerHTML = "";
-  caughtPokemons = 0; // Sayaç sıfırlama
+  caughtPokemons = 0; 
 });
 
 // Search button: Kullanıcının girdiği Pokémon'u göster
@@ -38,7 +38,7 @@ searchButton.addEventListener("click", async () => {
     if (!response.ok) throw new Error("Pokémon not found!");
 
     const data = await response.json();
-    container.innerHTML = ""; // Önceki sonucu temizle
+    container.innerHTML = ""; 
     displayPokemonCard(data);
   } catch (error) {
     alert(error.message);
@@ -75,7 +75,7 @@ async function fetchAllPokemons() {
 // Play button: Pokémonların rastgele hareket etmesini sağlar
 playButton.addEventListener("click", async () => {
   container.innerHTML = "";
-  caughtPokemons = 0; // Sayaç sıfırlama
+  caughtPokemons = 0;
   for (let i = 0; i < totalPokemons; i++) {
     const randomId = Math.floor(Math.random() * 1010) + 1;
     await createMovingPokemon(randomId);
@@ -92,8 +92,8 @@ async function createMovingPokemon(id) {
   img.classList.add("pokemon");
   img.title = pokemon.name;
 
-  let x = Math.random() * window.innerWidth * 0.8;
-  let y = Math.random() * window.innerHeight * 0.8;
+  let x = Math.random() * window.innerWidth * 0.9;
+  let y = Math.random() * window.innerHeight * 0.9;
 
   img.style.position = "absolute";
   img.style.left = `${x}px`;
@@ -102,8 +102,8 @@ async function createMovingPokemon(id) {
   container.appendChild(img);
 
   function movePokemon() {
-    x = Math.random() * window.innerWidth * 0.8;
-    y = Math.random() * window.innerHeight * 0.8;
+    x = Math.random() * window.innerWidth * 0.9;
+    y = Math.random() * window.innerHeight * 0.9;
 
     img.style.transition = `all ${Math.random() * 2 + 1}s ease-in-out`;
     img.style.left = `${x}px`;
@@ -118,22 +118,62 @@ async function createMovingPokemon(id) {
   });
 }
 
-// Pokémon Kartını Oluşturur
+// Pokémon Kartını Oluşturur ve Sesi Oynatır
 function displayPokemonCard(pokemon) {
+  const abilities = pokemon.abilities.map((ability) => ability.ability.name).join(", ");
+  const types = pokemon.types.map((type) => type.type.name).join(", ");
+  const stats = pokemon.stats
+    .map((stat) => `<p><strong>${stat.stat.name}:</strong> ${stat.base_stat}</p>`)
+    .join("");
+
+  // Pokémon cry (ses) dosyasının URL'si
+  const pokemonCry = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemon.id}.ogg`;
+
+  // Kart oluştur
   const card = document.createElement("div");
   card.classList.add("pokemon-card");
   card.innerHTML = `
     <h3>${pokemon.name.toUpperCase()}</h3>
     <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
+    <p><strong>Type:</strong> ${types}</p>
+    <p><strong>Abilities:</strong> ${abilities}</p>
+    ${stats}
+    <audio controls autoplay>
+      <source src="${pokemonCry}" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
   `;
 
-  card.addEventListener("click", () => addToCaughtList(pokemon.name, pokemon.sprites.front_default));
+  // Kartı ekrana yerleştir
   container.appendChild(card);
 }
 
-// Yakalanan Pokémonu listeye ekler
+// Search button: Kullanıcının girdiği Pokémon'u göster
+searchButton.addEventListener("click", async () => {
+  const pokemonName = searchInput.value.trim().toLowerCase();
+  if (pokemonName === "") {
+    alert("Please enter a Pokémon name!");
+    return;
+  }
+
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    if (!response.ok) throw new Error("Pokémon not found!");
+
+    const data = await response.json();
+    container.innerHTML = "";
+    displayPokemonCard(data); 
+  } catch (error) {
+    alert(error.message);
+  }
+});
+
+
+
+
+// Yakalanan Pokémonu üst kutuya ekler ve sesi çalar
 function addToCaughtList(name, imgSrc) {
-  caughtPokemons++; // Sayaç artırma
+
   const img = document.createElement("img");
   img.src = imgSrc;
   img.alt = name;
@@ -141,8 +181,29 @@ function addToCaughtList(name, imgSrc) {
 
   caughtPokemonContainer.appendChild(img);
 
-  checkAllCaught(); // Tüm Pokémonlar yakalandı mı kontrol et
+  // Pokémon'un sesini çalma
+  playPokemonCry(name);
+
+  caughtPokemons++;
+  checkAllCaught(); 
 }
+
+
+// Ses oynatma fonksiyonu
+function playPokemonCry(pokemonName) {
+
+  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`)
+    .then((response) => response.json())
+    .then((data) => {
+      const pokemonId = data.id;
+      const audio = new Audio(
+        `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemonId}.ogg`
+      );
+      audio.play();
+    })
+    .catch((error) => console.error("Error fetching Pokémon cry:", error));
+}
+
 
 // Tüm Pokémonlar yakalandı mı kontrol eder
 function checkAllCaught() {
@@ -153,6 +214,7 @@ function checkAllCaught() {
     }, 500);
   }
 }
+
 
 // Konfeti Efekti
 function launchConfetti() {
